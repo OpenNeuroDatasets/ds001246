@@ -1,0 +1,22 @@
+5.0.0	2018-04-26
+
+	- Replace 'null' with 'n/a' in task event files.
+	- Fix column name in task event files ('image_file' --> 'stim_file').
+	- Add ORCID for YK.
+	- Update README.
+
+4.0.0	2018-04-26
+
+	- Replace 'null' with 'n/a' in task event files.
+	- Fix column name in task event files ('image_file' --> 'stim_file').
+	- Add ORCID for YK.
+	- Update README.
+
+3.0.0	2018-04-26
+
+	- Replace 'null' with 'n/a' in task event files.
+	- Fix column name in task event files ('image_file' --> 'stim_file').
+	- Add ORCID for YK.
+	- Update README.
+
+undefined

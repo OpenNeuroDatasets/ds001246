@@ -1,5 +1,5 @@
-onset	duration	trial_no	event_type	image_file	response_time
-0	33	1	rest	null	0.000000
+onset	duration	trial_no	event_type	stim_file	response_time
+0	33	1	rest	n/a	0.000000
 33	9	2	stimulus	n03209910_3841.JPEG	0.000000
 42	9	3	stimulus	n04320973_14553.JPEG	0.000000
 51	9	4	stimulus	n02317335_17604.JPEG	0.000000
@@ -55,4 +55,4 @@ onset	duration	trial_no	event_type	image_file	response_time
 501	9	54	stimulus	n04442441_7198.JPEG	0.000000
 510	9	55	stimulus	n04591713_5442.JPEG	0.000000
 519	9	56	stimulus	n02503517_8447.JPEG	0.000000
-528	6	57	rest	null	0.000000
+528	6	57	rest	n/a	0.000000

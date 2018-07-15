@@ -1,5 +1,5 @@
 onset	duration	trial_no	event_type	category_id	response_time	evaluation
-0	33	1	rest	null	null	null
+0	33	1	rest	n/a	n/a	n/a
 33	3	2	cue	n04507155	52.589566	4
 36	15	2	imagery	n04507155	52.589566	4
 51	3	2	evaluation	n04507155	52.589566	4
@@ -100,4 +100,4 @@ onset	duration	trial_no	event_type	category_id	response_time	evaluation
 612	15	26	imagery	n03761084	628.479086	4
 627	3	26	evaluation	n03761084	628.479086	4
 630	3	26	inter_rest	n03761084	628.479086	4
-633	6	27	rest	null	null	null
+633	6	27	rest	n/a	n/a	n/a

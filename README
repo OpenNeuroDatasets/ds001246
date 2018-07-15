@@ -6,6 +6,8 @@ Original paper: Horikawa T & Kamitani Y (2017) Generic decoding of seen and imag
 
 In this study, fMRI data was recorded while subjects were viewing object images (image presentation experiment) or were imagining object images (imagery experiment). The image presentation experiment consisted of two distinct types of sessions: training image sessions and test image sessions. In the training image session, a total of 1,200 images from 150 object categories (8 images from each category) were each presented only once (24 runs). In the test image session, a total of 50 images from 50 object categories (1 image from each category) were presented 35 times each (35 runs). All images were taken from ImageNet (http://www.image-net.org/, Fall 2011 release), a large-scale hierarchical image database. During the image presentation experiment, subjects performed one-back image repetition task (5 trials in each run). In the imagery experiment, subjects were required to visually imagine images from 1 of the 50 categories (20 runs; 25 categories in each run; 10 samples for each category) that were presented in the test image session of the image presentation experiment. fMRI data in the training image sessions were used to train models (decoders) which predict visual features from fMRI patterns, and those in the test image sessions and the imagery experiment were used to evaluate the model performance. Predicted features for the test image sessions and imagery experiment are used to identify seen/imagined object categories from a set of computed features for numerous object images.
 
+Analysis demo code is available at GitHub (<https://github.com/KamitaniLab/GenericObjectDecoding>).
+
 ## Dataset
 
 ### MRI files
@@ -20,13 +22,13 @@ Each scanning session consisted of functional (EPI) and anatomical (inplane T2) 
 
 ### Task event files
 
-Task event files (‘sub-*_ses-*_task-*_run-*_events.tsv’) contains recorded event (stimuli presentation, subject responses, etc.) during fMRI runs. In task event files for perception task (‘ses-perceptionTraining' and 'ses-perceptionTest'), each column represents:
+Task event files (‘sub-\*_ses-\*_task-\*_run-\*_events.tsv’) contains recorded event (stimuli presentation, subject responses, etc.) during fMRI runs. In task event files for perception task (‘ses-perceptionTraining' and 'ses-perceptionTest'), each column represents:
 
 - 'onset': onset time (sec) of an event
 - 'duration': duration (sec) of the event
 - 'trial_no': trial (block) number of the event
 - 'event_type': type of the event ('rest': Rest block without visual stimulus, 'stimulus': Stimulus presentation block)
-- ‘image_file’: file name of the stimulus image presented in a stimulus block ('null' in rest blocks)
+- ‘stim_file’: file name of the stimulus image presented in a stimulus block ('null' in rest blocks)
 - 'response_time': time of button press at the block, elapsed time (sec) from the beginning of each run ('0' means that a subject did not press the button in the block)
 
 The name of a stimulus image file is formatted like as 'n03626115_19498.JPEG' where 'n03626115' is ImageNet/WorNet ID for a synset (category) and '19498' is image ID. Because of copyright, we do not include the stimulus images in the dataset. A script downloading the images from ImageNet is available at <https://github.com/KamitaniLab/GenericObjectDecoding>. Image features (CNN unit responses, HMAX, GIST, and SIFT) used in the original study are available at <http://brainliner.jp/data/brainliner/Generic_Object_Decoding>.
@@ -40,3 +42,16 @@ In task event files for imagery task ('ses-imageryTest'), each column in represe
 - 'category_id': ImageNet/WordNet synset ID of a synset (category) which the subject was instructed to imagine at the block
 - 'response_time': time of button press for imagery quality evaluation at the block, elapsed time (sec) from the beginning of each run
 - 'evaluation': vividness of their mental imagery evaluated by the subject (very vivid, fairly vivid, rather vivid, not vivid, or cannot recognize the target)
+
+## History
+
+- 2018-04-26 (v5)
+    * Replace 'null' with 'n/a' in task event files.
+    * Fix column name in task event files ('image_file' --> 'stim_file').
+    * Add ORCID for YK.
+    * Update README.
+- 2018-03-04 (v2)
+    * Modify dataset name.
+    * Update README.
+- 2018-03-01 (v1)
+    * Initial release.
