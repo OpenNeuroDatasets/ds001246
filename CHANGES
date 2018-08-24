@@ -1,3 +1,8 @@
+6.0.0	2018-XX-XX
+
+	- Add 'BIDSVersion' in dataset_description.json.
+	- Update README.
+
 5.0.0	2018-04-26
 
 	- Replace 'null' with 'n/a' in task event files.
@@ -5,18 +10,12 @@
 	- Add ORCID for YK.
 	- Update README.
 
-4.0.0	2018-04-26
+2.0.0	2018-03-04
 
-	- Replace 'null' with 'n/a' in task event files.
-	- Fix column name in task event files ('image_file' --> 'stim_file').
-	- Add ORCID for YK.
+	- Modify dataset name.
 	- Update README.
 
-3.0.0	2018-04-26
+1.0.0	2018-03-01
 
-	- Replace 'null' with 'n/a' in task event files.
-	- Fix column name in task event files ('image_file' --> 'stim_file').
-	- Add ORCID for YK.
-	- Update README.
+	- Initial release.
 
-undefined
