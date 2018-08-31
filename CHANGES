@@ -1,7 +1,7 @@
 1.0.0	2018-08-24
 
 	- Add 'BIDSVersion' in dataset_description.json.
-        - Change 'stim_file' to 'stim_id' in task event files.
+	- Change 'stim_file' to 'stim_id' in task event files.
 	- Update README.
 
 v00005	2018-04-26
