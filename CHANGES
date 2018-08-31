@@ -1,3 +1,8 @@
+1.0.1	2018-08-31
+
+	- Fix CHANGES.
+	- Update README.
+
 1.0.0	2018-08-24
 
 	- Add 'BIDSVersion' in dataset_description.json.
