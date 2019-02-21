@@ -1,3 +1,7 @@
+1.0.2	2019-02-21
+
+	- Add contact information in README.
+
 1.0.0	2018-08-24
 
 	- Add 'BIDSVersion' in dataset_description.json.
