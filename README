@@ -44,3 +44,8 @@ In task event files for imagery task ('ses-imageryTest'), each column in represe
 - 'category_id': ImageNet/WordNet synset ID of a synset (category) which the subject was instructed to imagine at the block
 - 'response_time': time of button press for imagery quality evaluation at the block, elapsed time (sec) from the beginning of each run
 - 'evaluation': vividness of their mental imagery evaluated by the subject (very vivid, fairly vivid, rather vivid, not vivid, or cannot recognize the target)
+
+## Contact
+
+- Email: <brainliner-admin@atr.jp>
+- [Issues on GitHub/KamitaniLab/OpenData](https://github.com/KamitaniLab/OpenData/issues)
