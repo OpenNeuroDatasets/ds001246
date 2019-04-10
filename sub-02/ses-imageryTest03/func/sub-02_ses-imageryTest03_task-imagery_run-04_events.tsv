@@ -1,5 +1,5 @@
 onset	duration	trial_no	event_type	category_id	category_index	response_time	evaluation
-0	33	1	rest	n/a	n/a	nan	n/a
+0	33	1	rest	n/a	n/a	n/a	n/a
 33	3	2	cue	2950256	21	52.977208	4.0
 36	15	2	imagery	2950256	21	52.977208	4.0
 51	3	2	evaluation	2950256	21	52.977208	4.0
@@ -40,14 +40,14 @@ onset	duration	trial_no	event_type	category_id	category_index	response_time	eval
 252	15	11	imagery	2071294	8	269.133913	4.0
 267	3	11	evaluation	2071294	8	269.133913	4.0
 270	3	11	inter_rest	2071294	8	269.133913	4.0
-273	3	12	cue	3716966	37	0.000000	1.0
-276	15	12	imagery	3716966	37	0.000000	1.0
-291	3	12	evaluation	3716966	37	0.000000	1.0
-294	3	12	inter_rest	3716966	37	0.000000	1.0
-297	3	13	cue	3584254	34	0.000000	1.0
-300	15	13	imagery	3584254	34	0.000000	1.0
-315	3	13	evaluation	3584254	34	0.000000	1.0
-318	3	13	inter_rest	3584254	34	0.000000	1.0
+273	3	12	cue	3716966	37	n/a	1.0
+276	15	12	imagery	3716966	37	n/a	1.0
+291	3	12	evaluation	3716966	37	n/a	1.0
+294	3	12	inter_rest	3716966	37	n/a	1.0
+297	3	13	cue	3584254	34	n/a	1.0
+300	15	13	imagery	3584254	34	n/a	1.0
+315	3	13	evaluation	3584254	34	n/a	1.0
+318	3	13	inter_rest	3584254	34	n/a	1.0
 321	3	14	cue	2951358	22	340.630127	4.0
 324	15	14	imagery	2951358	22	340.630127	4.0
 339	3	14	evaluation	2951358	22	340.630127	4.0
@@ -100,4 +100,4 @@ onset	duration	trial_no	event_type	category_id	category_index	response_time	eval
 612	15	26	imagery	3122295	24	628.850991	4.0
 627	3	26	evaluation	3122295	24	628.850991	4.0
 630	3	26	inter_rest	3122295	24	628.850991	4.0
-633	6	27	rest	n/a	n/a	nan	n/a
+633	6	27	rest	n/a	n/a	n/a	n/a
