@@ -30,10 +30,7 @@ Task event files (‘sub-\*_ses-\*_task-\*_run-\*_events.tsv’) contains record
 - 'duration': duration (sec) of the event
 - 'trial_no': trial (block) number of the event
 - 'event_type': type of the event ('rest': Rest block without visual stimulus, 'stimulus': Stimulus presentation block)
-- 'stimulus_id': stimulus ID of the image presented in a stimulus block ('n/a' in rest blocks)
-- 'stimulus_name': stimulus file name ('n/a' in rest blocks)
-- 'category_index': index (serial number) of the stimulus category ('n/a' in rest blocks)
-- 'image_index': index (serial number) of the stimulus image ('n/a' in rest blocks)
+- ‘stim_id’: stimulus ID of the image presented in a stimulus block ('n/a' in rest blocks)
 - 'response_time': time of button press at the block, elapsed time (sec) from the beginning of each run ('0' means that a subject did not press the button in the block)
 
 The name of a stimulus image file is formatted like as 'n03626115_19498.JPEG' where 'n03626115' is ImageNet/WorNet ID for a synset (category) and '19498' is image ID. Because of copyright, we do not include the stimulus images in the dataset. A script downloading the images from ImageNet is available at <https://github.com/KamitaniLab/GenericObjectDecoding>. Image features (CNN unit responses, HMAX, GIST, and SIFT) used in the original study are available at <http://brainliner.jp/data/brainliner/Generic_Object_Decoding>.
@@ -44,8 +41,7 @@ In task event files for imagery task ('ses-imageryTest'), each column in represe
 - 'duration': duration (sec) of the event
 - 'trial_no': trial (block) number of the event
 - 'event_type': type of the event ('rest' and 'inter_rest': rest period, 'cue': cue presentation period, 'imagery': imagery period, 'evaluation': evaluation of imagery quality period)
-- 'category_id': ImageNet/WordNet synset ID of a synset (category) which the subject was instructed to imagine at the block ('n/a' in rest blocks)
-- 'category_index': index (serial number) of the target synset/category ('n/a' in rest blocks)
+- 'category_id': ImageNet/WordNet synset ID of a synset (category) which the subject was instructed to imagine at the block
 - 'response_time': time of button press for imagery quality evaluation at the block, elapsed time (sec) from the beginning of each run
 - 'evaluation': vividness of their mental imagery evaluated by the subject (very vivid, fairly vivid, rather vivid, not vivid, or cannot recognize the target)
 
