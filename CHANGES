@@ -1,4 +1,26 @@
+1.0.2	2019-02-21
 
-1.0.0	2019-04-11
+	- Add contact information in README.
 
-	- Initial snapshot
+1.0.0	2018-08-24
+
+	- Add 'BIDSVersion' in dataset_description.json.
+	- Change 'stim_file' to 'stim_id' in task event files.
+	- Update README.
+
+v00005	2018-04-26
+
+	- Replace 'null' with 'n/a' in task event files.
+	- Fix column name in task event files ('image_file' --> 'stim_file').
+	- Add ORCID for YK.
+	- Update README.
+
+v00002	2018-03-04
+
+	- Modify dataset name.
+	- Update README.
+
+v00001	2018-03-01
+
+	- Initial release.
+
