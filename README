@@ -53,15 +53,15 @@ In task event files for imagery task ('ses-imageryTest'), each column in represe
 
 The stimulus images are named as 'n03626115_19498' where 'n03626115' is ImageNet/WorNet ID for a synset (category) and '19498' is image ID. The categories are named as the ImageNet/WordNet sysnet ID (e.g., `n03626115`). The stimulus and category names are included in the task event files as 'stimulus_name' and 'category_name', respectively.
 
-For use in analysis code, the task event files also contain 'stimulus_id' and 'category_id', which are float numbers generated based on the stimulus or category names (e.g., 'n03626115_19498' --> 3626115.019498). In addition, the files include indexes, or integer serial numbers, of each stimulus and category within each session (i.e., Training, Test, or Imagery) as 'image_index' and 'category_index'. Note that the indexes depend on the sessions  and the same indexes in different sessions refer to different stimuli.
+For use in analysis code, the task event files also contain 'stimulus_id' and 'category_id', which are float numbers generated based on the stimulus or category names (e.g., 'n03626115_19498' --> 3626115.019498). In addition, the files include indexes, or integer serial numbers, of each stimulus and category within each session (i.e., perceptionTraining, perceptionTest, or imageryTest) as 'image_index' and 'category_index'. Note that the indexes depend on the sessions  and the same indexes in different sessions refer to different stimuli.
 
 The mapping between stimulus/category names, IDs, and indexes 
 
-- [stimulus_ImageNetTraining.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/stimulus_ImageNetTraining.tsv) (Training sessions)
+- [stimulus_ImageNetTraining.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/stimulus_ImageNetTraining.tsv) (perceptionTraining sessions)
 	- It contains 'stimulus_name', 'stimulus_id', 'category_index', and 'image_index'.
-- [stimulus_ImageNetTest.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/stimulus_ImageNetTest.tsv) (Test sessions)
+- [stimulus_ImageNetTest.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/stimulus_ImageNetTest.tsv) (perceptionTest sessions)
 	- It contains 'stimulus_name', 'stimulus_id', 'category_index', and 'image_index'.
-- [category_GODImagery.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/category_GODImagery.tsv) (Imagery sessions)
+- [category_GODImagery.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/category_GODImagery.tsv) (imageryTest sessions)
 	- It contains 'category_name', 'category_id', and 'category_index'.
 
 ### Stimulus images
