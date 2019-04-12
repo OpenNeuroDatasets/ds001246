@@ -33,11 +33,10 @@ Task event files (‘sub-\*_ses-\*_task-\*_run-\*_events.tsv’) contains record
 - 'event_type': type of the event ('rest': Rest block without visual stimulus, 'stimulus': Stimulus presentation block)
 - 'stim_id': stimulus ID of the image presented in a stimulus block ('n/a' in rest blocks)
 - 'stimulus_name': stimulus file name of the image presented in a stimulus block ('n/a' in rest blocks)
-- 'category index': index (serial number) of the stimulus image category (ImageNet/WordNet synset) ('n/a' in rest blocks)
-- 'image_index': index (serial number) of the stimulus image ('n/a' in rest blocks)
 - 'response_time': time of button press at the block, elapsed time (sec) from the beginning of each run ('n/a' when the subject did not press the button in the block)
+- Additional columns 'category_index' and 'image_index' are for internal use.
 
-In task event files for imagery task ('ses-imageryTest'), each column in represents:
+In task event files for imagery task ('ses-imageryTest'), each column represents:
 
 - 'onset': onset time (sec) of an event
 - 'duration': duration (sec) of the event
@@ -45,24 +44,22 @@ In task event files for imagery task ('ses-imageryTest'), each column in represe
 - 'event_type': type of the event ('rest' and 'inter_rest': rest period, 'cue': cue presentation period, 'imagery': imagery period, 'evaluation': evaluation of imagery quality period)
 - 'category_id': ImageNet/WordNet synset ID of a synset (category) which the subject was instructed to imagine at the block ('n/a' in rest blocks)
 - 'category_name': ImageNet/WordNet synset (category) which the subject was instructed to imagine at the block ('n/a' in rest blocks)
-- 'category_index': index (serial number) of the stimulus image category (ImageNet/WordNet synset) ('n/a' in rest blocks)
-- 'response_time': time of button press for imagery quality evaluation at the block, elapsed time (sec) from the beginning of each run
+- 'response_time': time of button press for imagery quality evaluation at the block, elapsed time (sec) from the beginning of each run ('n/a' when the subject did not press the button in the block)
 - 'evaluation': vividness of their mental imagery evaluated by the subject (very vivid, fairly vivid, rather vivid, not vivid, or cannot recognize the target)
+- Additional column 'category_index' is for internal use.
 
 #### Image/category labels
 
-The stimulus images are named as 'n03626115_19498' where 'n03626115' is ImageNet/WorNet ID for a synset (category) and '19498' is image ID. The categories are named as the ImageNet/WordNet sysnet ID (e.g., `n03626115`). The stimulus and category names are included in the task event files as 'stimulus_name' and 'category_name', respectively.
+The stimulus images are named as 'n03626115_19498' where 'n03626115' is ImageNet/WorNet ID for a synset (category) and '19498' is image ID. The categories are named as the ImageNet/WordNet sysnet ID (e.g., 'n03626115'). The stimulus and category names are included in the task event files as 'stimulus_name' and 'category_name', respectively. For use in analysis code, the task event files also contain 'stimulus_id' and 'category_id', which are float numbers generated based on the stimulus or category names (e.g., 'n03626115_19498' --> 3626115.019498).
 
-For use in analysis code, the task event files also contain 'stimulus_id' and 'category_id', which are float numbers generated based on the stimulus or category names (e.g., 'n03626115_19498' --> 3626115.019498). In addition, the files include indexes, or integer serial numbers, of each stimulus and category within each session (i.e., perceptionTraining, perceptionTest, or imageryTest) as 'image_index' and 'category_index'. Note that the indexes depend on the sessions  and the same indexes in different sessions refer to different stimuli.
-
-The mapping between stimulus/category names, IDs, and indexes 
+The mapping between stimulus/category names and IDs:
 
 - [stimulus_ImageNetTraining.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/stimulus_ImageNetTraining.tsv) (perceptionTraining sessions)
-	- It contains 'stimulus_name', 'stimulus_id', 'category_index', and 'image_index'.
+	- The first and second column from the left is 'stimulus_name' and 'stimulus_id', respectively.
 - [stimulus_ImageNetTest.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/stimulus_ImageNetTest.tsv) (perceptionTest sessions)
-	- It contains 'stimulus_name', 'stimulus_id', 'category_index', and 'image_index'.
+	- The first and second column from the left is 'stimulus_name' and 'stimulus_id', respectively.
 - [category_GODImagery.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/category_GODImagery.tsv) (imageryTest sessions)
-	- It contains 'category_name', 'category_id', and 'category_index'.
+	- The first and second column from the left is 'category_name' and 'category_id', respectively.
 
 ### Stimulus images
 
