@@ -31,7 +31,7 @@ Task event files (‘sub-\*_ses-\*_task-\*_run-\*_events.tsv’) contains record
 - 'duration': duration (sec) of the event
 - 'trial_no': trial (block) number of the event
 - 'event_type': type of the event ('rest': Rest block without visual stimulus, 'stimulus': Stimulus presentation block)
-- 'stim_id': stimulus ID of the image presented in a stimulus block ('n/a' in rest blocks)
+- 'stimulus_id': stimulus ID of the image presented in a stimulus block ('n/a' in rest blocks)
 - 'stimulus_name': stimulus file name of the image presented in a stimulus block ('n/a' in rest blocks)
 - 'response_time': time of button press at the block, elapsed time (sec) from the beginning of each run ('n/a' when the subject did not press the button in the block)
 - Additional columns 'category_index' and 'image_index' are for internal use.
