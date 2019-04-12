@@ -1,9 +1,0 @@
-{
-    "PulseSequenceType": "T2-weighted Turbo Spin Echo", 
-    "RepetitionTime": 7.02, 
-    "EchoTime": 0.069, 
-    "FlipAngle": 160, 
-    "Manufacturer": "Siemens", 
-    "ManufacturersModelName": "MAGNETOM Trio A Tim", 
-    "MagneticFieldStrength": 3
-}
