@@ -1,0 +1,8 @@
+1.2.1 2019-12-06
+  - fix server miscommunication on version 1.2.0
+1.2.0 2019-12-04
+  - Add preprocessed fMRI data (derivatives/preproc-spm)
+
+1.0.0	2019-12-04
+
+	- Initial snapshot
