@@ -1,0 +1,6 @@
+1.2.0 2019-12-04
+  - Add preprocessed fMRI data (derivatives/preproc-spm)
+
+1.0.0	2019-12-04
+
+	- Initial snapshot
