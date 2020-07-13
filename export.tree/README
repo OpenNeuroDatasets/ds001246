@@ -1,0 +1,71 @@
+
+# Generic Object Decoding (fMRI on ImageNet)
+
+## Original paper
+
+Horikawa, T. & Kamitani, Y. (2017) Generic decoding of seen and imagined objects using hierarchical visual features. Nature Communications 8:15037. <https://www.nature.com/articles/ncomms15037>
+
+## Overview
+
+In this study, fMRI data was recorded while subjects were viewing object images (image presentation experiment) or were imagining object images (imagery experiment). The image presentation experiment consisted of two distinct types of sessions: training image sessions and test image sessions. In the training image session, a total of 1,200 images from 150 object categories (8 images from each category) were each presented only once (24 runs). In the test image session, a total of 50 images from 50 object categories (1 image from each category) were presented 35 times each (35 runs). All images were taken from ImageNet (http://www.image-net.org/, Fall 2011 release), a large-scale hierarchical image database. During the image presentation experiment, subjects performed one-back image repetition task (5 trials in each run). In the imagery experiment, subjects were required to visually imagine images from 1 of the 50 categories (20 runs; 25 categories in each run; 10 samples for each category) that were presented in the test image session of the image presentation experiment. fMRI data in the training image sessions were used to train models (decoders) which predict visual features from fMRI patterns, and those in the test image sessions and the imagery experiment were used to evaluate the model performance. Predicted features for the test image sessions and imagery experiment are used to identify seen/imagined object categories from a set of computed features for numerous object images.
+
+Analysis demo code is available at GitHub ([KamitaniLab/GenericObjectDecoding](https://github.com/KamitaniLab/GenericObjectDecoding)).
+
+## Dataset
+
+### MRI files
+
+The present dataset contains fMRI data from five subjects ('sub-01', 'sub-02', 'sub-03', 'sub-04', and 'sub-05'). Each subject data contains three types of MRI data each of which was collected over multiple scanning sessions.
+
+- 'ses-perceptionTraining': fMRI data from the training image sessions in the image presentation experiment (24 runs; 3-5 scanning sessions)
+- 'ses-perceptionTest': fMRI data from the test image sessions in the image presentation experiment (35 runs; 4-6 scanning sessions)
+- 'ses-imageryTest': fMRI data from the imagery experiment (20 runs; 3-5 scanning sessions)
+
+Each scanning session consisted of functional (EPI) and anatomical (inplane T2) data. The functional EPI images covered the entire brain (TR, 3000 ms; TE, 30 ms; flip angle, 80°; voxel size, 3 × 3 × 3 mm; FOV, 192 × 192 mm; number of slices, 50, slice gap, 0 mm) and inplane T2-weighted anatomical images were acquired with the same slices used for the EPI (TR, 7020 ms; TE, 69 ms; flip angle, 160°; voxel size, 0.75 × 0.75 × 3.0 mm; FOV, 192 × 192 mm). The dataset also includes a T1-weighted anatomical reference image for each subject (TR, 2250 ms; TE, 3.06 ms; TI, 900 ms; flip angle, 9°; voxel size, 1.0 × 1.0 × 1.0 mm; FOV, 256 × 256 mm). The T1-weighted images were scanned only once for each subject in a separate scanning session and are stored in 'ses-anatomy' directories. The T1-weighted images were defaced by pydeface (<https://pypi.python.org/pypi/pydeface>). All DICOM files are converted to Nifti-1 files by mri_convert in FreeSurfer. In addition, the dataset contains mask images of manually defined ROIs for each subject in 'sourcedata' directory (See 'README' in 'sourcedata' for more details).
+
+### Task event files
+
+Task event files (‘sub-\*_ses-\*_task-\*_run-\*_events.tsv’) contains recorded event (stimuli presentation, subject responses, etc.) during fMRI runs. In task event files for perception task (‘ses-perceptionTraining' and 'ses-perceptionTest'), each column represents:
+
+- 'onset': onset time (sec) of an event
+- 'duration': duration (sec) of the event
+- 'trial_no': trial (block) number of the event
+- 'event_type': type of the event ('rest': Rest block without visual stimulus, 'stimulus': Stimulus presentation block)
+- 'stimulus_id': stimulus ID of the image presented in a stimulus block ('n/a' in rest blocks)
+- 'stimulus_name': stimulus file name of the image presented in a stimulus block ('n/a' in rest blocks)
+- 'response_time': time of button press at the block, elapsed time (sec) from the beginning of each run ('n/a' when the subject did not press the button in the block)
+- Additional columns 'category_index' and 'image_index' are for internal use.
+
+In task event files for imagery task ('ses-imageryTest'), each column represents:
+
+- 'onset': onset time (sec) of an event
+- 'duration': duration (sec) of the event
+- 'trial_no': trial (block) number of the event
+- 'event_type': type of the event ('rest' and 'inter_rest': rest period, 'cue': cue presentation period, 'imagery': imagery period, 'evaluation': evaluation of imagery quality period)
+- 'category_id': ImageNet/WordNet synset ID of a synset (category) which the subject was instructed to imagine at the block ('n/a' in rest blocks)
+- 'category_name': ImageNet/WordNet synset (category) which the subject was instructed to imagine at the block ('n/a' in rest blocks)
+- 'response_time': time of button press for imagery quality evaluation at the block, elapsed time (sec) from the beginning of each run ('n/a' when the subject did not press the button in the block)
+- 'evaluation': vividness of their mental imagery evaluated by the subject (very vivid, fairly vivid, rather vivid, not vivid, or cannot recognize the target)
+- Additional column 'category_index' is for internal use.
+
+#### Image/category labels
+
+The stimulus images are named as 'n03626115_19498' where 'n03626115' is ImageNet/WorNet ID for a synset (category) and '19498' is image ID. The categories are named as the ImageNet/WordNet sysnet ID (e.g., 'n03626115'). The stimulus and category names are included in the task event files as 'stimulus_name' and 'category_name', respectively. For use in analysis code, the task event files also contain 'stimulus_id' and 'category_id', which are float numbers generated based on the stimulus or category names (e.g., 'n03626115_19498' --> 3626115.019498).
+
+The mapping between stimulus/category names and IDs:
+
+- [stimulus_ImageNetTraining.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/stimulus_ImageNetTraining.tsv) (perceptionTraining sessions)
+	- The first and second column from the left is 'stimulus_name' and 'stimulus_id', respectively.
+- [stimulus_ImageNetTest.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/stimulus_ImageNetTest.tsv) (perceptionTest sessions)
+	- The first and second column from the left is 'stimulus_name' and 'stimulus_id', respectively.
+- [category_GODImagery.tsv](https://github.com/KamitaniLab/GenericObjectDecoding/blob/master/data/category_GODImagery.tsv) (imageryTest sessions)
+	- The first and second column from the left is 'category_name' and 'category_id', respectively.
+
+### Stimulus images
+
+Because of licensing issues, we do not include the stimulus images in the dataset. A script downloading the images from ImageNet is available at <https://github.com/KamitaniLab/GenericObjectDecoding>. Image features (CNN unit responses, HMAX, GIST, and SIFT) used in the original study are available at <https://figshare.com/articles/Generic_Object_Decoding/7387130>. 
+
+## Contact
+
+- Email: <brainliner-admin@atr.jp>
+- We also accept inquires at [issues on GitHub/KamitaniLab/OpenData](https://github.com/KamitaniLab/OpenData/issues).
